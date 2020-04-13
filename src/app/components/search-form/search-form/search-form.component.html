@@ -1,15 +1,14 @@
 <!-- Search form -->
 <div class="container">
     <div class="row">
-        <form class="form-inline d-flex justify-content-center md-form form-sm active-pink active-pink-2 mt-2">
-            <div class="col-md-10">
+        <form #userForm="ngForm" class="form-inline d-flex justify-content-center md-form form-sm active-pink active-pink-2 mt-2">
+            <div class="col-md-10 form-group">
                 <i class="fas fa-search" aria-hidden="true"></i>
-                <input class="form-control form-control-sm ml-3 w-100" type="text" placeholder="Search" aria-label="Search" id="name" [(ngModel)]="query.name" >
+                <input class="form-control form-control-sm ml-3 w-100" type="text" placeholder="Search" aria-label="Search" id="username" [(ngModel)]="username" name="username" (keyup)="getUserProfile()">
             </div>
             <div class="col-md-2">
                 <button type="button" class="btn btn-outline-danger">Search</button>
             </div>
         </form>
-        Display {{query.name}}
     </div>
 </div>

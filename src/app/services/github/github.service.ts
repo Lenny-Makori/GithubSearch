@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { User } from 'src/app/models/user';
 import { Repo } from 'src/app/models/repo';
 
@@ -10,7 +9,7 @@ import { Repo } from 'src/app/models/repo';
 export class GithubService {
 
   user: User;
-  repo: Repo;
+  repos: Repo;
   username: string;
 
   apiKey: string = 'b4c6f893e48edf22ce0f8964e559702b07fa1b7a';
@@ -19,7 +18,7 @@ export class GithubService {
 
   constructor(private http: HttpClient) { 
     this.user = new User("", "", "", 0, 0, 0);
-    this.repo = new Repo("", "");
+    this.repos = new Repo("", "");
     this.username = 'Lenny-Makori' 
   }
 
@@ -65,8 +64,8 @@ export class GithubService {
     const promise = new Promise((resolve,reject) =>{
       this.http.get<ReposApiResponse>(`${this.url}/users/${this.username}/repos?access_token=${this.apiKey}`)
       .toPromise().then(response => {
-        this.repo.name = response.name;
-        this.repo.description = response.description;
+        this.repos.name = response.name;
+        this.repos.description = response.description;
 
         resolve();
       },

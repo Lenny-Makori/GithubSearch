@@ -13,11 +13,11 @@ export class GithubComponent implements OnInit {
   constructor(private githubService: GithubService) { }
 
   ngOnInit(): void {
-    this.githubService.getUsers().subscribe((users)=>{
-      this.users = users;
-      console.log(users)
+    // this.githubService.getUsers().subscribe((users)=>{
+    //   this.users = users;
+    //   console.log(users)
 
-    })
+    // })
 
   }
 
