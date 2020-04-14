@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { GithubComponent } from './components/github/github/github.component';
 import { SearchFormComponent } from './components/search-form/search-form/search-form.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { RepoDisplayComponent } from './components/repo-display/repo-display.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GithubComponent,
     SearchFormComponent,
-    NavbarComponent
+    NavbarComponent,
+    RepoDisplayComponent
   ],
   imports: [
     BrowserModule,
