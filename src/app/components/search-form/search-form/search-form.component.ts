@@ -3,6 +3,7 @@ import { User } from 'src/app/models/user';
 import { Repo } from 'src/app/models/repo';
 import { GithubService } from 'src/app/services/github/github.service';
 import { GithubComponent } from '../../github/github/github.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-form',
@@ -34,7 +35,7 @@ export class SearchFormComponent implements OnInit {
 
   }
 
-  constructor(private githubService: GithubService) { }
+  constructor(private githubService: GithubService, private router: Router) { }
 
   ngOnInit(): void {
     
@@ -46,6 +47,10 @@ export class SearchFormComponent implements OnInit {
     this.repo = this.githubService.repo
     console.log(this.repo)
 
+    }
+
+    onClickProfile(username) {
+      this.router.navigate(['users/:username', username])
     }
       // this.form.reset();
 
