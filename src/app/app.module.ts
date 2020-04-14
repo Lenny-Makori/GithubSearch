@@ -9,6 +9,8 @@ import { GithubComponent } from './components/github/github/github.component';
 import { SearchFormComponent } from './components/search-form/search-form/search-form.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RepoDisplayComponent } from './components/repo-display/repo-display.component';
+import { HoverEffectDirective } from './directives/hover-effect.directive';
+import { UppercasePipe } from './pipes/uppercase.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { RepoDisplayComponent } from './components/repo-display/repo-display.com
     GithubComponent,
     SearchFormComponent,
     NavbarComponent,
-    RepoDisplayComponent
+    RepoDisplayComponent,
+    HoverEffectDirective,
+    UppercasePipe
   ],
   imports: [
     BrowserModule,
