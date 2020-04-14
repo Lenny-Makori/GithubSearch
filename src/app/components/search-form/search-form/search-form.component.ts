@@ -18,8 +18,7 @@ export class SearchFormComponent implements OnInit {
   user: User;
   username: any;
   repo: Repo;
-  // repos: any[]
-  // form: any;
+
 
   getUserProfile() {
     this.githubService.fetchUser()
@@ -51,9 +50,7 @@ export class SearchFormComponent implements OnInit {
 
     }
 
-    // onClickProfile(username) {
-    //   this.router.navigate(['users/:repos', username])
-    // }
+  
 
         
       
