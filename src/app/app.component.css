@@ -12,3 +12,11 @@
       font-size: 3.5rem;
     }
   }
+
+
+  div{
+    background-image: url("/assets/github-octocat.jpg");
+    background-repeat: no-repeat;
+    background-size: inherit;
+    position: relative;
+  }

@@ -49,10 +49,9 @@ export class SearchFormComponent implements OnInit {
 
     }
 
-    onClickProfile(username) {
-      this.router.navigate(['users/:username', username])
-    }
-      // this.form.reset();
+    // onClickProfile(username) {
+    //   this.router.navigate(['users/:repos', username])
+    // }
 
         
       

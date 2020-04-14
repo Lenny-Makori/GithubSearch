@@ -7,7 +7,7 @@ import { SearchFormComponent } from './components/search-form/search-form/search
 const routes: Routes = [
   { path: 'users', component: SearchFormComponent },
   { path: '', redirectTo: 'users', pathMatch: 'full' },
-  {path: 'user/:username', component: GithubComponent}
+  {path: 'users/repos', component: GithubComponent}
 ];
 
 @NgModule({

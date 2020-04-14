@@ -2,6 +2,7 @@
 <div class="container">
     <div class="row">
         <form #userForm="ngForm" class="form-inline d-flex justify-content-center md-form form-sm active-pink active-pink-2 mt-2">
+            <p class="p">Search your github username here: </p>
             <div class="col-md-10 form-group">
                 <i class="fas fa-search" aria-hidden="true"></i>
                 <input class="form-control form-control-sm ml-3 w-100" type="text" placeholder="Search" aria-label="Search" id="username" [(ngModel)]="username" name="username" (keyup)="getUserProfile()">
@@ -13,14 +14,32 @@
 
 
     <div class="card" style="width: 18rem;" *ngIf='user'>
-        <div>
-            <img class="card-img-top" src="{{user.avatar_url}}" alt="Card image cap">
+        <div class="">
+            <div>
+                <img class="card-img-top" src="{{user.avatar_url}}" alt="Card image cap">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><strong>{{user.login}}</strong></h5>
+              <div>
+                <h6>Public Repos: {{user.public_repos}}</h6>
+                <h6>Followers: {{user.followers}}</h6>
+                <h6>Following: {{user.following}}</h6>
+              </div>
+              <p><a routerLink="/repos" class="btn btn-dark btn-lg">Repos</a></p>
+              <!-- <button class="btn btn-primary">View Repositories</button> -->
+            </div>
         </div>
-        <div class="card-body">
-          <h5 class="card-title">{{user.login}}</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <button class="btn btn-primary" (click)="onClickProfile(user.login)">Go somewhere</button>
+      </div><br><br><br><br><br>
+      
+
+      <div class="card row repoclass">
+        <div class="col-md-6">
+            <h4>List of repositories:</h4>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" *ngFor = 'let reppo of repo'>{{reppo.name}}<br>{{reppo.description}}</li>
+            </ul>
         </div>
       </div>
-      </div>
+
+    </div>
 
