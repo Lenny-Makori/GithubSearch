@@ -34,3 +34,6 @@ This page was created using:
 In case you encounter any  troubles in installing the application, contact me on makorilenny28@gmail.com.
 
 
+### License
+*MIT license*
+Copyright (c) 2020 **Lenny-Makori**
