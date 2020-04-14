@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { User } from 'src/app/models/user';
 import { Repo } from 'src/app/models/repo';
 import { GithubService } from 'src/app/services/github/github.service';
+import { GithubComponent } from '../../github/github/github.component';
 
 @Component({
   selector: 'app-search-form',
@@ -10,22 +11,26 @@ import { GithubService } from 'src/app/services/github/github.service';
 })
 export class SearchFormComponent implements OnInit {
 
+  @Input() githubComponent: GithubComponent
+
   user: User;
-  username: string;
-  repos: Repo;
-  form: any;
+  username: any;
+  repo: Repo;
+  // repos: any[]
+  // form: any;
 
   getUserProfile() {
-    this.githubService.getUser(this.username)
-  console.log(this.username)
+    this.githubService.fetchUser()
+    this.user = this.githubService.user
+    console.log(this.user)
 
-  this.githubService.fetchUser()
-  this.user = this.githubService.user
-  console.log(this.user)
+    this.githubService.getUser(this.username)
+    console.log(this.username)
+
   
-  this.githubService.fetchRepos()
-  this.repos = this.githubService.repos
-  console.log(this.repos)
+    this.githubService.fetchRepos(this.username)
+    this.repo = this.githubService.repo
+    console.log(this.repo)
 
   }
 
@@ -33,17 +38,13 @@ export class SearchFormComponent implements OnInit {
 
   ngOnInit(): void {
     
-    {
-      this.githubService.getUser(this.username)
-    console.log(this.username)
-
     this.githubService.fetchUser()
     this.user = this.githubService.user
     console.log(this.user)
     
-    this.githubService.fetchRepos()
-    this.repos = this.githubService.repos
-    console.log(this.repos)
+    this.githubService.fetchRepos(this.username)
+    this.repo = this.githubService.repo
+    console.log(this.repo)
 
     }
       // this.form.reset();
@@ -53,4 +54,3 @@ export class SearchFormComponent implements OnInit {
     
   }
 
-}
