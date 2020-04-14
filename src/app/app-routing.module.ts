@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { GithubComponent } from './components/github/github/github.component';
 import { SearchFormComponent } from './components/search-form/search-form/search-form.component';
+import { RepoDisplayComponent } from './components/repo-display/repo-display.component';
 
 
 const routes: Routes = [
   { path: 'users', component: SearchFormComponent },
-  { path: '', redirectTo: 'users', pathMatch: 'full' },
-  {path: 'users/repos', component: GithubComponent}
+  { path: '', redirectTo: '/users', pathMatch: 'full' },
+  {path: 'repos', component: RepoDisplayComponent}
 ];
 
 @NgModule({
