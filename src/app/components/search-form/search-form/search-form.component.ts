@@ -4,6 +4,7 @@ import { Repo } from 'src/app/models/repo';
 import { GithubService } from 'src/app/services/github/github.service';
 import { GithubComponent } from '../../github/github/github.component';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-search-form',
@@ -35,10 +36,10 @@ export class SearchFormComponent implements OnInit {
 
   }
 
-  constructor(private githubService: GithubService, private router: Router) { }
+  constructor(private githubService: GithubService, private router: Router, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
-    
+    this.spinner.show();
     this.githubService.fetchUser()
     this.user = this.githubService.user
     console.log(this.user)
@@ -46,6 +47,7 @@ export class SearchFormComponent implements OnInit {
     this.githubService.fetchRepos(this.username)
     this.repo = this.githubService.repo
     console.log(this.repo)
+    this.spinner.hide();
 
     }
 
