@@ -2,7 +2,7 @@
     <div class="col-md-6">
         <h4>List of repositories:</h4>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item" *ngFor = 'let reppo of repo' appHoverEffect><strong>{{reppo.name}}</strong><br>{{reppo.description}}</li>
+            <li class="list-group-item" *ngFor = 'let reppo of repo' appHoverEffect><strong>{{reppo.name|toUppercase}}</strong><br>{{reppo.description}}</li>
         </ul>
     </div>
   </div>

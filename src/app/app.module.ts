@@ -10,7 +10,7 @@ import { SearchFormComponent } from './components/search-form/search-form/search
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RepoDisplayComponent } from './components/repo-display/repo-display.component';
 import { HoverEffectDirective } from './directives/hover-effect.directive';
-import { UppercasePipe } from './pipes/uppercase.pipe';
+import { ToUppercasePipe } from './pipes/to-uppercase.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { UppercasePipe } from './pipes/uppercase.pipe';
     NavbarComponent,
     RepoDisplayComponent,
     HoverEffectDirective,
-    UppercasePipe
+    ToUppercasePipe
   ],
   imports: [
     BrowserModule,
